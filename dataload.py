@@ -159,3 +159,47 @@ class CustomDataset(data.Dataset):
 
         self.comments_vec = encoded  # 단어집합 숫자에 맞추고 pad, 한 결과 집합
         self.comments_list = temp1  # 문장 원본
+                print(len(temp1))
+        print(len(vocab))
+        print(len(comments_list))
+        print(len(encoded))
+        
+        if self.phase != 'test':
+            bias_name_list = ['none', 'gender', 'others']
+            hate_name_list = ['none', 'hate', 'offensive']
+            from itertools import product
+            bias_hate_list = [bias_name_list, hate_name_list]
+            bias_hate_list = list(product(*bias_hate_list))
+            label_list = []
+            for idx in range(len(self.comments_list)):
+                labels = (bias_list[idx], hate_list[idx])
+                label_list.append(bias_hate_list.index(labels))
+            self.label_list = label_list
+            print(type(label_list))
+            #print(type(label_list))
+            #print(len(label_list)
+    def __getitem__(self, index):
+        if self.phase != 'test':
+            return (self.comments_list[index], self.comments_vec[index]), self.label_list[index]
+        elif self.phase == 'test':
+            dummy = ""
+            return (self.comments_list[index], self.comments_vec[index]), dummy
+
+    def __len__(self):
+        return len(self.comments_list)
+
+def size_of_vocab():
+    return 
+
+
+def data_loader(root, phase='train', batch_size=16):
+    print("CustomDataset-> data_loader")
+    if phase == 'train':
+        shuffle = True
+    else:
+        shuffle = False
+
+    dataset = CustomDataset(root, phase)
+    dataloader = data.DataLoader(dataset=dataset, batch_size=batch_size, shuffle=shuffle)
+    return dataloader
+
