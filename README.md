@@ -2,6 +2,9 @@
 
 
 
+<img src="![ezgif com-gif-maker](https://user-images.githubusercontent.com/44603374/101269696-de690e80-37b4-11eb-8929-815202fe7807.gif)
+" width="90%"></img>
+
 ### CNN – BILSTM 조합모델을 이용한 
 ### 악성댓글 분류 분석
 
