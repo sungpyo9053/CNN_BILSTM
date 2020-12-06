@@ -1,11 +1,6 @@
 # CNN_BILSTM
 
 
-<div>
-<img src="![ezgif com-gif-maker](https://user-images.githubusercontent.com/44603374/101269696-de690e80-37b4-11eb-8929-815202fe7807.gif)
-" width="90%"></img>
-</div>
-
 ### CNN – BILSTM 조합모델을 이용한 
 ### 악성댓글 분류 분석
 
@@ -37,4 +32,8 @@ https://cafe.naver.com/nlpk/319 를 참조 할 수 있습니다
 
 CNN+BILSTM 논문 작성.pdf 를 참고하시면 더욱 자세히 알 수 있습니다.
 다음 내용은 CNN+LSTM을 이용한 영화감정 분석 논문을 참조하였습니다.
+
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/44603374/101269735-415aa580-37b5-11eb-82a9-8388ed000197.gif)
+
 
